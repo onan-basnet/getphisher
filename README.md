@@ -19,7 +19,6 @@
   <img src="https://img.shields.io/badge/Written%20In-Bash-cyan?style=flat-square">
 </p>
 -->
-<p align="center">A beginners friendly, Automated phishing tool with 30+ templates.</p>
 
 ##
 
