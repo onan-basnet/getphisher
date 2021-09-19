@@ -39,13 +39,13 @@
 
 - Just, Clone this repository -
 ```
-$ git clone git://github.com/htr-tech/zphisher.git
+$ git clone git://github.com/onan-basnet/getphisher.git
 ```
 
 - Change to cloned directory and run `zphisher.sh` -
 ```
-$ cd zphisher
-$ bash zphisher.sh
+$ cd getphisherphisher
+$ bash getphisher.sh
 ```
 
 - On first launch, It'll install the dependencies and that's it. `Zphisher` is installed.
@@ -69,13 +69,13 @@ $ docker run --rm -it htrtech/zphisher
 > Supported Platform : **`Termux`**, **`Ubuntu/Debian/Kali/Parrot`**, **`Arch Linux/Manjaro`**, **`Fedora`**
 
 ##
-
+<!--
 <h3 align="center">
 :: Workflow ::
 </h3>
 <p align="center">
 <img src=".imgs/wf.gif"/>
-</p>
+-->
 
 ### Special Thanks :
 
@@ -87,11 +87,11 @@ $ docker run --rm -it htrtech/zphisher
 
 
 ### Find Me on :
-<p align="left">
+<!--<p align="left">
   <a href="https://github.com/htr-tech" target="_blank"><img src="https://img.shields.io/badge/Github-HTR--TECH-green?style=for-the-badge&logo=github"></a>
   <a href="https://www.instagram.com/tahmid.rayat" target="_blank"><img src="https://img.shields.io/badge/IG-%40tahmid.rayat-red?style=for-the-badge&logo=instagram"></a>
   <a href="https://m.me/tahmid.rayat.official" target="_blank"><img src="https://img.shields.io/badge/Chat-Messenger-blue?style=for-the-badge&logo=messenger"></a>
-</p>
+</p>-->
 
 ## Warning
 This Tool is made for educational purpose only !
