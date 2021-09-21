@@ -444,56 +444,9 @@ site_facebook() {
 	
 
 
-## Gmail/Google
-site_gmail() {
 
-	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Gmail Old Login Page
 
-		${RED}[${WHITE}02${RED}]${ORANGE} Gmail New Login Page
-
-		${RED}[${WHITE}03${RED}]${ORANGE} Advanced Voting Poll
-
-	EOF
-
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
-
-	case $REPLY in 
-
-		1 | 01)
-
-			website="google"
-
-			mask='http://get-unlimited-google-drive-free'
-
-			tunnel_menu;;		
-
-		2 | 02)
-
-			website="google_new"
-
-			mask='http://get-unlimited-google-drive-free'
-
-			tunnel_menu;;
-
-		3 | 03)
-
-			website="google_poll"
-
-			mask='http://vote-for-the-best-social-media'
-
-			tunnel_menu;;
-
-		*)
-
-			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
-
-			{ sleep 1; clear; banner_small; site_gmail; };;
-
-	esac
-
-}
 
 
 ## Vk
