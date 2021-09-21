@@ -30,7 +30,6 @@
 - Docker support (checkout `docker-legacy` branch)
 - Multiple tunneling options
   - Localhost
-  - Ngrok (With or without hotspot)
   - Cloudflared (Alternative of Ngrok)
 
 
@@ -41,7 +40,7 @@
 $ git clone git://github.com/onan-basnet/getphisher.git
 ```
 
-- Change to cloned directory and run `zphisher.sh` -
+- Change to cloned directory and run `getphisher.sh` -
 ```
 $ cd getphisherphisher
 $ bash getphisher.sh
@@ -52,12 +51,12 @@ $ bash getphisher.sh
 ### Run on Docker
 ```
 $ docker pull htrtech/zphisher
-$ docker run --rm -it htrtech/zphisher
+$ docker run --rm -it onan-basnet/getphisher
 ```
 
 ### Dependencies
 
-**`Zphisher`** requires following programs to run properly - 
+**`getphisher`** requires following programs to run properly - 
 - `php`
 - `wget`
 - `curl`
