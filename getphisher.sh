@@ -272,9 +272,9 @@ msg_exit() {
 about() {
 	{ clear; banner; echo; }
 	cat <<- EOF
-		${GREEN}Author   ${RED}:  ${ORANGE}TAHMID RAYAT ${RED}[ ${ORANGE}HTR-TECH ${RED}]
-		${GREEN}Github   ${RED}:  ${CYAN}https://github.com/htr-tech
-		${GREEN}Social   ${RED}:  ${CYAN}https://linktr.ee/tahmid.rayat
+		${GREEN}Author   ${RED}:  ${ORANGE}ONAN BASNET ${RED}[ ${ORANGE} ONAN-BASNET ${RED}]
+		${GREEN}Github   ${RED}:  ${CYAN}https://github.com/onan-basnet
+		${GREEN}Social   ${RED}:  ${CYAN}https://techblogalways.blogspot.com
 		${GREEN}Version  ${RED}:  ${ORANGE}2.2
 
 		${REDBG}${WHITE} Thanks : Adi1090x,MoisesTapia,ThelinuxChoice
