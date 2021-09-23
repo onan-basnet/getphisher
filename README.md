@@ -50,7 +50,7 @@ $ bash getphisher.sh
 
 ### Run on Docker
 ```
-$ docker pull htrtech/zphisher
+$ docker pull onan-basnet/getphisher
 $ docker run --rm -it onan-basnet/getphisher
 ```
 
