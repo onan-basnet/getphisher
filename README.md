@@ -1,8 +1,4 @@
-<!-- Zphisher -->
 
-<p align="center">
-  <img src=".imgs/logo.png">
-</p>
 <!--
 <p align="center">
   <img src="https://img.shields.io/badge/Version-2.2-green?style=for-the-badge">
@@ -46,7 +42,7 @@ $ cd getphisherphisher
 $ bash getphisher.sh
 ```
 
-- On first launch, It'll install the dependencies and that's it. `Zphisher` is installed.
+- On first launch, It'll install the dependencies and that's it. `getphisher` is installed.
 
 ### Run on Docker
 ```
@@ -62,7 +58,7 @@ $ docker run --rm -it onan-basnet/getphisher
 - `curl`
 - `git`
 
-> All the dependencies will be installed automatically when you run `Zphisher` for the first time.
+> All the dependencies will be installed automatically when you run `getphisher` for the first time.
 
 > Supported Platform : **`Termux`**, **`Ubuntu/Debian/Kali/Parrot`**, **`Arch Linux/Manjaro`**, **`Fedora`**
 
